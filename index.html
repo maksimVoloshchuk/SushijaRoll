@@ -23,7 +23,7 @@
       </div>
 
       <div class="actions">
-        <button class="btn danger" id="clearCart">🗑️ Clear</button>
+        
         <button class="btn primary" id="openCheckout">
           🛍️ Корзина <span class="badge" id="cartCount">0</span>
         </button>
@@ -39,35 +39,12 @@
     <section class="layout">
       <div id="menuRoot"></div>
 
-      <aside class="cart" aria-label="Корзина">
-        <div class="cart-head">
-          <h3>Корзина</h3>
-          <span class="badge" id="cartCount2">0</span>
-        </div>
-
-        <div class="cart-body">
-          <div id="cartItems"></div>
-
-          <div class="cart-total" id="totals" style="display:none;">
-            <div class="row"><span>Подытог</span><strong id="subTotal">€0.00</strong></div>
-            <div class="row"><span>Доставка</span><strong id="delivery">€0.00</strong></div>
-            <div class="row" style="font-size:14px;"><span><b>Итого</b></span><strong id="grandTotal">€0.00</strong></div>
-            <div style="margin-top:10px;">
-              <button class="btn danger" id="clearCart2" style="width:100%;">Очистить</button>
-            </div>
-          </div>
-
-          <div class="empty" id="emptyCart">
-            Пока пусто. Добавь позиции из меню ✅
-          </div>
-        </div>
-      </aside>
     </section>
   </main>
 
-  <!-- FULLSCREEN MODAL -->
+  <!-- МОДАЛКА ТОВАРА (твоя) -->
   <div class="modal" id="itemModal" aria-hidden="true">
-    <div class="modal-card" role="dialog" aria-modal="true" aria-label="Рецепт позиции">
+    <div class="modal-card">
       <div class="modal-head">
         <div style="display:flex; flex-direction:column; gap:2px;">
           <h3 id="mTitle" style="margin:0; font-size:16px;">Позиция</h3>
@@ -105,9 +82,29 @@
     </div>
   </div>
 
-  <!-- Сначала данные меню -->
+  <!-- 🔥 НОВАЯ ВСПЛЫВАЮЩАЯ КОРЗИНА -->
+  <div class="modal" id="cartModal">
+    <div class="modal-card">
+      <div class="modal-head">
+        <h3>Корзина</h3>
+        <button class="btn" id="cartClose">✖ Закрыть</button>
+      </div>
+
+      <div class="modal-body">
+      <div id="cartItems"></div>
+
+      </div>
+
+      <div class="modal-foot">
+        <button class="btn" id="cartClose2">Закрыть</button>
+        <button class="btn primary">Оформить заказ</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Сначала данные -->
   <script src="menu-data.js"></script>
-  <!-- Потом логика сайта -->
+  <!-- потом логика -->
   <script src="app.js"></script>
 </body>
 </html>

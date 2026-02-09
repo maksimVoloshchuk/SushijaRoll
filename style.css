@@ -38,10 +38,13 @@ button{ font:inherit; color:inherit; background:none; border:0; cursor:pointer; 
 }
 .brand{ display:flex; gap:10px; align-items:center; min-width:210px; }
 .logo{
-  width:38px;height:38px;border-radius:12px;
-  background: linear-gradient(135deg, var(--accent), var(--accent2));
-  box-shadow: 0 10px 24px rgba(37,99,235,.12);
+  width:38px;
+  height:38px;
+  border-radius:12px;
+
+  background: url("images/logo.png") center / cover no-repeat;
 }
+
 .brand-title{ line-height:1.05; font-weight:900; letter-spacing:.2px; }
 .brand-sub{ color:var(--muted); font-size:12px; margin-top:2px; }
 
@@ -79,14 +82,25 @@ button{ font:inherit; color:inherit; background:none; border:0; cursor:pointer; 
   border:1px solid rgba(239,68,68,.18);
 }
 .badge{
-  display:inline-flex; align-items:center; justify-content:center;
-  min-width:22px; height:22px; padding:0 7px;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+
+  min-width:22px;
+  height:22px;
+  padding:0 7px;
+
   border-radius:999px;
-  background: rgba(16,185,129,.12);
-  border:1px solid rgba(16,185,129,.22);
-  color:#065f46;
-  font-size:12px; font-weight:900;
+
+  background: #ffffff;   /* белый круг */
+  color: #000000;        /* черный текст */
+
+  border: 1px solid rgba(0,0,0,.15);
+
+  font-size:12px;
+  font-weight:900;
 }
+
 
 /* CATEGORY NAV */
 .catbar{
@@ -135,12 +149,11 @@ button{ font:inherit; color:inherit; background:none; border:0; cursor:pointer; 
 
 /* LAYOUT */
 .layout{
-  display:grid;
-  grid-template-columns: 1fr 360px;
-  gap:18px;
-  align-items:start;
-  padding:16px 0 40px;
+  display:block;
+  max-width: 900px;
+  margin: 0 auto;
 }
+
 
 /* SECTION */
 .section{ margin-top:12px; padding-top:8px; }
@@ -207,12 +220,22 @@ button{ font:inherit; color:inherit; background:none; border:0; cursor:pointer; 
 
 .qty{ display:flex; align-items:center; gap:8px; }
 .qty .qbtn{
-  width:34px;height:34px;border-radius:12px;
+  width:34px;
+  height:34px;
+  border-radius:12px;
+
+  display:flex;              /* магия начинается */
+  align-items:center;        /* центр по вертикали */
+  justify-content:center;    /* центр по горизонтали */
+
+  line-height:1;             /* убираем смещение текста */
+font-weight: 900;   /* жирный */
+font-size: 18px;    /* крупнее */
+
   background: rgba(11,14,20,.04);
   border:1px solid rgba(11,14,20,.10);
-  transition:.15s ease;
-  font-weight:900;
 }
+
 .qty .qbtn:hover{ background: rgba(11,14,20,.07); }
 .qty .qval{ min-width:26px; text-align:center; font-weight:900; }
 .addbtn{

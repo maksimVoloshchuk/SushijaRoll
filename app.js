@@ -342,3 +342,25 @@ window.addEventListener("keydown", (e)=>{ if(e.key==="Escape") closeModal(); });
 
 $("#mAdd").addEventListener("click", ()=>{ if(currentModalItemId) inc(currentModalItemId); });
 $("#mAdd2").addEventListener("click", ()=>{ if(currentModalItemId) inc(currentModalItemId); });
+const cartModal = document.getElementById("cartModal");
+const openCheckout = document.getElementById("openCheckout");
+const cartClose = document.getElementById("cartClose");
+const cartClose2 = document.getElementById("cartClose2");
+
+openCheckout.addEventListener("click", () => {
+  cartModal.classList.add("show");
+
+  const sideCart = document.getElementById("cartItems");
+  const modalCart = document.getElementById("cartItemsModal");
+
+  modalCart.innerHTML = sideCart.innerHTML;
+});
+
+
+cartClose.addEventListener("click", () => {
+  cartModal.classList.remove("show");
+});
+
+cartClose2.addEventListener("click", () => {
+  cartModal.classList.remove("show");
+});
