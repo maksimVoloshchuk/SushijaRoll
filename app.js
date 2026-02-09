@@ -365,12 +365,14 @@ const cartClose2 = document.getElementById("cartClose2");
 
 openCheckout.addEventListener("click", () => {
   cartModal.classList.add("show");
+  document.body.style.overflow = "hidden";
 });
 
 
 
 cartClose.addEventListener("click", () => {
   cartModal.classList.remove("show");
+  document.body.style.overflow = "";
 });
 
 cartClose2.addEventListener("click", () => {

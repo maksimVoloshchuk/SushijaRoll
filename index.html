@@ -13,8 +13,8 @@
       <div class="brand">
         <div class="logo" aria-hidden="true"></div>
         <div>
-          <div class="brand-title">Sushi Delivery</div>
-          <div class="brand-sub">Белый сайт • Меню • Рецепт</div>
+          <div class="brand-title">SushiyaRoll</div>
+          <div class="brand-sub"></div>
         </div>
       </div>
 
@@ -85,19 +85,28 @@
   <!-- 🔥 НОВАЯ ВСПЛЫВАЮЩАЯ КОРЗИНА -->
   <div class="modal" id="cartModal">
     <div class="modal-card">
+      <div class="free-ship">
+    Чтобы получить бесплатную доставку —
+    добавьте ещё на <b>€10</b>
+  </div>
       <div class="modal-head">
         <h3>Корзина</h3>
-        <button class="btn" id="cartClose">✖ Закрыть</button>
+        <button class="btn" id="cartClose">✖</button>
       </div>
 
       <div class="modal-body">
       <div id="cartItems"></div>
       </div>
 
-      <div class="modal-foot">
-        <button class="btn" id="cartClose2">Закрыть</button>
-        <button class="btn primary">Оформить заказ</button>
-      </div>
+      <div class="checkout-bar">
+  <div>
+    <div class="small">Итого</div>
+    <div class="big" id="checkoutTotal">€0.00</div>
+  </div>
+
+  <button class="checkout-btn">Оформить заказ</button>
+</div>
+
     </div>
   </div>
 
