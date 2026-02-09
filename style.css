@@ -105,12 +105,25 @@ button{ font:inherit; color:inherit; background:none; border:0; cursor:pointer; 
 .catbar-inner::-webkit-scrollbar{ display:none; }
 .catbtn{
   flex:0 0 auto;
-  padding:10px 12px; border-radius:999px;
+
+  height: 38px;                 /* фиксированная высота */
+  padding: 0 14px;              /* убрали разный верх/низ */
+
+  border-radius:999px;
   border:1px solid rgba(11,14,20,.10);
   background: rgba(11,14,20,.03);
   color:var(--muted);
-  font-weight:900; font-size:13px;
-  transition:.18s ease; white-space:nowrap;
+
+  font-weight:900;
+  font-size:13px;
+  line-height:1;
+
+  display:flex;                 /* ВАЖНО */
+  align-items:center;           /* центр по вертикали */
+  justify-content:center;
+
+  transition:.18s ease;
+  white-space:nowrap;
 }
 .catbtn:hover{ background: rgba(11,14,20,.06); color: var(--text); }
 .catbtn.active{
@@ -348,4 +361,92 @@ button{ font:inherit; color:inherit; background:none; border:0; cursor:pointer; 
 @media (max-width: 620px){
   .grid{ grid-template-columns: 1fr; }
   .brand-sub{ display:none; }
+}
+/* =========================
+   MOBILE VERSION
+========================= */
+@media (max-width: 600px){
+
+  .wrap{
+    padding: 12px;
+  }
+
+  /* верхняя панель */
+  .topbar-inner{
+    padding: 10px 12px;
+  }
+
+  .brand-title{
+    font-size: 16px;
+  }
+
+  /* поиск меньше */
+  .search{
+    padding: 8px 10px;
+  }
+
+  /* категории */
+  .catbar{
+    top: 60px;
+  }
+
+  .catbar-inner{
+    gap: 8px;
+    padding: 0 12px;
+  }
+
+  .catbtn{
+    height: 34px;
+    padding: 0 12px;
+    font-size: 12px;
+  }
+
+  /* карточки */
+  .grid{
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .card-top{
+    padding: 10px;
+    gap: 10px;
+  }
+
+  .thumb{
+    width: 70px;
+    height: 70px;
+    border-radius: 12px;
+  }
+
+  .card h4{
+    font-size: 14px;
+  }
+
+  .desc{
+    font-size: 12px;
+  }
+
+  .card-bottom{
+    padding: 10px;
+  }
+
+  .addbtn{
+    padding: 8px 10px;
+    font-size: 13px;
+  }
+
+  /* корзина вниз */
+  .cart{
+    position: static;
+    margin-top: 12px;
+  }
+
+  /* модалка */
+  .m-hero{
+    grid-template-columns: 1fr;
+  }
+
+  .m-img{
+    aspect-ratio: 1 / 1;
+  }
 }
